@@ -11,7 +11,7 @@
             </li>
             <li class="sidebar-item ">
                 <a href="{{route('dashboard.index')}}"  class="sidebar-link">
-                    <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboards</span>
+                    <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
                 </a>
             </li>  
             <li class="sidebar-item ">

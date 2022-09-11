@@ -48,3 +48,21 @@ Route::group(['middleware' => 'auth:user'], function () {
     /*******************TEACHER ROUTE END*************/       
 });
 /******************MIDDLEWARE PAGES ROUTES END****************/
+/******************FUNCTIONALITY ROUTES****************/
+Route::get('/setup_commands', function() {
+    Artisan::call('config:cache');
+    Artisan::call('migrate:refresh');
+    Artisan::call('db:seed', [ '--class' => DatabaseSeeder::class]);
+    Artisan::call('view:clear');
+    return 'DONE';
+});
+Route::get('/migrate', function() {
+    Artisan::call('migrate');
+    return 'Migration done';
+});
+Route::get('/cache_clear', function() {
+    Artisan::call('config:cache');
+    Artisan::call('view:clear');
+    Artisan::call('cache:clear');
+    return 'Cache Clear DOne';
+});
